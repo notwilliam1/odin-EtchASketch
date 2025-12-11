@@ -7,3 +7,10 @@ for (let i = 0; i < totalSquares; i++) {
     gridSquare.classList.add('grid-square');
     gridContainer.appendChild(gridSquare);
 }
+
+const gridSquares = document.querySelectorAll('.grid-square');
+gridSquares.forEach(square => {
+    square.addEventListener('mouseover', () => {
+        square.style.backgroundColor = 'black';
+    });
+});
