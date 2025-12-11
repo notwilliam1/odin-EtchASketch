@@ -1,4 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
+    function generateRandomColor() {
+        const r = Math.floor(Math.random() * 256);
+        const g = Math.floor(Math.random() * 256);
+        const b = Math.floor(Math.random() * 256);
+        return `rgb(${r}, ${g}, ${b})`;
+    }
+    
     function createGrid(newSize) {    
         const gridContainer = document.querySelector('.grid-container');
         gridContainer.innerHTML = '';
@@ -36,6 +43,34 @@ document.addEventListener('DOMContentLoaded', () => {
     size_button.innerHTML = "Change Grid Size";
     size_button.classList.add('change-size-button');
     buttonContainer.appendChild(size_button);
+
+    var rainbow_button = document.createElement("button");
+    rainbow_button.innerHTML = "Rainbow Mode";
+    rainbow_button.classList.add('rainbow-mode-button');
+    buttonContainer.appendChild(rainbow_button);
+
+    rainbow_button.addEventListener('click', () => {
+        const gridSquares = document.querySelectorAll('.grid-square');
+        gridSquares.forEach(square => {
+            square.addEventListener('mouseover', () => {
+                square.style.backgroundColor = generateRandomColor();
+            });
+        });
+    });
+
+    black_button = document.createElement("button");
+    black_button.innerHTML = "Black Mode";
+    black_button.classList.add('black-mode-button');
+    buttonContainer.appendChild(black_button);
+
+    black_button.addEventListener('click', () => {
+        const gridSquares = document.querySelectorAll('.grid-square');
+        gridSquares.forEach(square => {
+            square.addEventListener('mouseover', () => {
+                square.style.backgroundColor = 'black';
+            });
+        });
+    });
 
     clear_button.addEventListener('click', () => {
         document.querySelectorAll('.grid-square').forEach(square => {
