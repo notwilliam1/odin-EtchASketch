@@ -18,13 +18,28 @@
 
 body h1 {
     text-align: center;
-    font-family: Arial, sans-serif;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: normal;
     margin-top: 50px;
-    margin-bottom: 50px;
 }
 
 body {
     display: flex;
     justify-content: center;
     flex-direction: column;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin-bottom: 30px;
+    gap: 10px;
+}
+
+.button-container button {
+    padding: 10px 20px;
+    font-size: 14px;
+    font-family: 'Courier New', Courier, monospace;
+    cursor: pointer;
 }

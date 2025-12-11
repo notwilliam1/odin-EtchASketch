@@ -14,3 +14,18 @@ gridSquares.forEach(square => {
         square.style.backgroundColor = 'black';
     });
 });
+
+const buttonContainer = document.createElement('div');
+buttonContainer.classList.add('button-container');
+document.body.insertBefore(buttonContainer, gridContainer);
+
+var button = document.createElement("button");
+button.innerHTML = "Clear Grid";
+button.classList.add('clear-button');
+buttonContainer.appendChild(button);
+
+button.addEventListener('click', () => {
+    gridSquares.forEach(square => {
+        square.style.backgroundColor = 'white';
+    });
+});
